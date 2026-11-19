@@ -15,9 +15,29 @@ def parse_duration(text):
 
 
 def parse_inline(filename):
-    """Task 1: return a dict summarizing an InLine VAST ad."""
-    raise NotImplementedError
+    root = ET.parse(DATA / filename).getroot()
+    title = root.find("v:Ad/v:InLine/v:AdTitle", VAST_NS).text.strip()
+    duration = root.find(".//v:Duration", VAST_NS).text.strip()
 
+    impressions = []
+    for imp in root.findall(".//v:Impression", VAST_NS):
+        impressions.append(imp.text.strip())
+
+    tracking = []
+    for t in root.findall(".//v:Tracking", VAST_NS):
+        tracking.append((t.get("event"), t.text.strip()))
+
+    media = []
+    for m in root.findall(".//v:MediaFile", VAST_NS):
+        media.append((m.get("width"), m.get("height"), m.text.strip()))
+
+    return {
+        "title": title,
+        "duration": duration,
+        "impressions": impressions,
+        "tracking": tracking,
+        "media": media,
+    }
 
 def resolve(filename, max_depth=5):
     """Task 2: follow Wrapper -> VASTAdTagURI until an InLine, a no-fill, a loop or max depth."""
@@ -30,11 +50,4 @@ def validate(filename):
 
 
 if __name__ == "__main__":
-    root = ET.parse(DATA / "vast_inline.xml").getroot()
-    print(root.tag)
-    title = root.find("v:Ad/v:InLine/v:AdTitle", VAST_NS)
-    print(title.text)
-    duration = root.find(".//v:Duration", VAST_NS)
-    print(duration.text.strip())
-    for imp in root.findall(".//v:Impression", VAST_NS):
-        print(imp.text.strip())
+     print(parse_inline("vast_inline.xml"))
