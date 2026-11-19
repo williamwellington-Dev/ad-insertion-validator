@@ -30,4 +30,11 @@ def validate(filename):
 
 
 if __name__ == "__main__":
-    pass  # call your functions here while you build
+    root = ET.parse(DATA / "vast_inline.xml").getroot()
+    print(root.tag)
+    title = root.find("v:Ad/v:InLine/v:AdTitle", VAST_NS)
+    print(title.text)
+    duration = root.find(".//v:Duration", VAST_NS)
+    print(duration.text.strip())
+    for imp in root.findall(".//v:Impression", VAST_NS):
+        print(imp.text.strip())
