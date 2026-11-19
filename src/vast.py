@@ -11,13 +11,22 @@ VAST_NS = {"v": "http://www.iab.com/VAST"}
 
 def parse_duration(text):
     """'00:00:30.000' -> 30.0 seconds. Return None if the format is invalid."""
-    raise NotImplementedError
+    parts = text.split(":")
+    if len(parts) != 3:
+        return None
+    try:
+        hours = int(parts[0])
+        minutes = int(parts[1])
+        seconds = float(parts[2])
+    except ValueError:
+        return None
+    return hours * 3600 + minutes * 60 + seconds
 
 
 def parse_inline(filename):
     root = ET.parse(DATA / filename).getroot()
     title = root.find("v:Ad/v:InLine/v:AdTitle", VAST_NS).text.strip()
-    duration = root.find(".//v:Duration", VAST_NS).text.strip()
+    duration = parse_duration(root.find(".//v:Duration", VAST_NS).text.strip())
 
     impressions = []
     for imp in root.findall(".//v:Impression", VAST_NS):
@@ -50,4 +59,4 @@ def validate(filename):
 
 
 if __name__ == "__main__":
-     print(parse_inline("vast_inline.xml"))
+    print(parse_inline("vast_inline.xml"))
