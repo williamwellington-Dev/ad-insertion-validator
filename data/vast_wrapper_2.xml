@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST version="4.2" xmlns="http://www.iab.com/VAST">
+  <Ad id="wrap-dsp-90">
+    <Wrapper>
+      <AdSystem>SampleDSP</AdSystem>
+      <Impression id="imp-dsp"><![CDATA[https://dsp.example.com/imp?id=90]]></Impression>
+      <VASTAdTagURI><![CDATA[vast_inline.xml]]></VASTAdTagURI>
+      <Creatives>
+        <Creative>
+          <Linear>
+            <TrackingEvents>
+              <Tracking event="midpoint"><![CDATA[https://dsp.example.com/ev?id=90&e=mid]]></Tracking>
+            </TrackingEvents>
+          </Linear>
+        </Creative>
+      </Creatives>
+    </Wrapper>
+  </Ad>
+</VAST>

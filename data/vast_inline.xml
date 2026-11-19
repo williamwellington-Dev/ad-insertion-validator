@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST version="4.2" xmlns="http://www.iab.com/VAST">
+  <Ad id="ad-7781" sequence="1">
+    <InLine>
+      <AdSystem version="2.1">SampleAdServer</AdSystem>
+      <AdServingId>a1b2c3d4-0001</AdServingId>
+      <AdTitle>Northshore Coffee - Morning Roast 30s</AdTitle>
+      <Advertiser>Northshore Coffee Co.</Advertiser>
+      <Impression id="imp-inline"><![CDATA[https://track.example-adserver.com/imp?ad=7781&src=inline]]></Impression>
+      <Error><![CDATA[https://track.example-adserver.com/err?ad=7781&code=[ERRORCODE]]]></Error>
+      <Creatives>
+        <Creative id="cr-7781-a" adId="7781" sequence="1">
+          <UniversalAdId idRegistry="Ad-ID">NSC0001000H</UniversalAdId>
+          <Linear>
+            <Duration>00:00:30.000</Duration>
+            <TrackingEvents>
+              <Tracking event="start"><![CDATA[https://track.example-adserver.com/ev?ad=7781&e=start]]></Tracking>
+              <Tracking event="firstQuartile"><![CDATA[https://track.example-adserver.com/ev?ad=7781&e=q1]]></Tracking>
+              <Tracking event="midpoint"><![CDATA[https://track.example-adserver.com/ev?ad=7781&e=mid]]></Tracking>
+              <Tracking event="thirdQuartile"><![CDATA[https://track.example-adserver.com/ev?ad=7781&e=q3]]></Tracking>
+              <Tracking event="complete"><![CDATA[https://track.example-adserver.com/ev?ad=7781&e=complete]]></Tracking>
+            </TrackingEvents>
+            <VideoClicks>
+              <ClickThrough id="ct-1"><![CDATA[https://www.example.com/northshore]]></ClickThrough>
+            </VideoClicks>
+            <MediaFiles>
+              <MediaFile delivery="progressive" type="video/mp4" width="1920" height="1080" bitrate="5000" codec="H.264"><![CDATA[https://cdn.example-adserver.com/7781/roast_1080p.mp4]]></MediaFile>
+              <MediaFile delivery="progressive" type="video/mp4" width="1280" height="720" bitrate="2500" codec="H.264"><![CDATA[https://cdn.example-adserver.com/7781/roast_720p.mp4]]></MediaFile>
+            </MediaFiles>
+          </Linear>
+        </Creative>
+      </Creatives>
+    </InLine>
+  </Ad>
+</VAST>

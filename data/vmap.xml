@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vmap:VMAP xmlns:vmap="http://www.iab.net/videosuite/vmap" version="1.0">
+  <vmap:AdBreak timeOffset="start" breakType="linear" breakId="preroll">
+    <vmap:AdSource id="pre-1" allowMultipleAds="false" followRedirects="true">
+      <vmap:AdTagURI templateType="vast4"><![CDATA[vast_inline.xml]]></vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+  <vmap:AdBreak timeOffset="00:10:00.000" breakType="linear" breakId="midroll-1">
+    <vmap:AdSource id="mid-1" allowMultipleAds="false" followRedirects="true">
+      <vmap:AdTagURI templateType="vast4"><![CDATA[vast_wrapper_1.xml]]></vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+  <vmap:AdBreak timeOffset="00:20:00.000" breakType="linear" breakId="midroll-2">
+    <vmap:AdSource id="mid-2" allowMultipleAds="false" followRedirects="true">
+      <vmap:AdTagURI templateType="vast4"><![CDATA[vast_broken.xml]]></vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+  <vmap:AdBreak timeOffset="00:30:00.000" breakType="linear" breakId="midroll-3">
+    <vmap:AdSource id="mid-3" allowMultipleAds="false" followRedirects="true">
+      <vmap:AdTagURI templateType="vast4"><![CDATA[vast_nofill.xml]]></vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+  <vmap:AdBreak timeOffset="end" breakType="linear" breakId="postroll">
+    <vmap:AdSource id="post-1" allowMultipleAds="false" followRedirects="true">
+      <vmap:AdTagURI templateType="vast4"><![CDATA[vast_loop_a.xml]]></vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+</vmap:VMAP>

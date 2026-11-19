@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST version="4.2" xmlns="http://www.iab.com/VAST">
+  <Ad id="loop-b">
+    <Wrapper>
+      <AdSystem>LoopyExchange</AdSystem>
+      <Impression><![CDATA[https://loopy.example.com/imp?id=b]]></Impression>
+      <VASTAdTagURI><![CDATA[vast_loop_a.xml]]></VASTAdTagURI>
+    </Wrapper>
+  </Ad>
+</VAST>

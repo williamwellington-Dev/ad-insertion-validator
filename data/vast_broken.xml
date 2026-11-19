@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST version="4.2" xmlns="http://www.iab.com/VAST">
+  <Ad id="ad-9902">
+    <InLine>
+      <AdSystem>SampleAdServer</AdSystem>
+      <AdTitle>Rapid Auto Glass 15s</AdTitle>
+      <Creatives>
+        <Creative id="cr-9902">
+          <Linear>
+            <Duration>15 seconds</Duration>
+            <TrackingEvents>
+              <Tracking event="start"><![CDATA[http://track.example-adserver.com/ev?ad=9902&e=start]]></Tracking>
+              <Tracking event="complete"><![CDATA[https://track.example-adserver.com/ev?ad=9902&e=complete]]></Tracking>
+            </TrackingEvents>
+            <MediaFiles>
+            </MediaFiles>
+          </Linear>
+        </Creative>
+      </Creatives>
+    </InLine>
+  </Ad>
+</VAST>
